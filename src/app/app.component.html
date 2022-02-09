@@ -1,0 +1,11 @@
+<div class="row col-12">
+    <div class="btn-padding"> 
+        <button [routerLink]="['home']">Home</button>
+    </div>
+    <div class="btn-padding"> 
+        <button (click)="randomPokemon()">Random</button>
+    </div>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

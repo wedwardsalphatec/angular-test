@@ -1,0 +1,52 @@
+<div *ngIf="ready">
+    <div class="row">
+        <div class="col-1">
+            <b class="chevron" (click)="backClicked()">
+                &laquo;
+            </b>
+        </div>
+        <div class="col-5">
+            <img [src]="pokemon?.img" width="70%">
+        </div>
+        <div class="col-5">
+            <div class="row">
+                {{pokemon?.num}}
+            </div>
+            <div class="row">
+                {{pokemon?.name}}
+            </div>
+            <div class="row">
+                {{pokemon?.type}}
+            </div>
+            <div class="row">
+                {{pokemon?.height}}
+            </div>
+            <b class="row">Weaknesses</b>
+            <div>
+                <li *ngFor="let weakness of pokemon?.weaknesses">
+                    {{weakness}}
+                </li>
+            </div>
+            <b class="row">Evolutions</b>
+            <div>
+                <li *ngFor="let evolution of pokemon?.prev_evolution">
+                    <a class="evolution-link" (click)="viewEvolution(evolution.num)">{{evolution.name}}</a>
+                </li>
+                <li *ngFor="let evolution of pokemon?.next_evolution">
+                    <a class="evolution-link" (click)="viewEvolution(evolution.num)">{{evolution.name}}</a>
+                </li>
+            </div>
+        </div>
+        <div class="col-1">
+            <b class="chevron" (click)="nextClicked()">
+                &raquo;
+            </b>
+        </div>
+    </div>
+    <div>
+       <router-outlet></router-outlet> 
+    </div>    
+</div>
+<div *ngIf="!ready">
+    <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" >
+</div>

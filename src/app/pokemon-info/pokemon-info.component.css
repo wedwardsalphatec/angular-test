@@ -1,0 +1,10 @@
+.chevron {
+    width: 100%; 
+    font-size: 100px;
+    cursor: pointer;
+}
+
+.evolution-link {
+    cursor: pointer;
+    color: blue;
+}

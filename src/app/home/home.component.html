@@ -1,0 +1,8 @@
+<div class='row' *ngIf="ready">
+    <div class='col-3' style="padding:50px" *ngFor="let pokemon of pokemons">
+        <input type="image" [src]="pokemon.img" width="100%" [routerLink]="['/pokemon', pokemon.id]">
+    </div>    
+</div>
+<div *ngIf="!ready">
+    <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif">
+</div>
